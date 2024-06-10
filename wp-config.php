@@ -37,7 +37,8 @@ define( 'DB_CHARSET', 'utf8' );
 
 /** The database collate type. Don't change this if in doubt. */
 define( 'DB_COLLATE', '' );
-
+/** google maps */
+define( 'API_KEY', 'AIzaSyD_4d-xu3MjPc0fYq7TuDyu7SnQ-cby8P0' );
 /**#@+
  * Authentication unique keys and salts.
  *
@@ -79,7 +80,12 @@ $table_prefix = 'wp_';
  * @link https://wordpress.org/support/article/debugging-in-wordpress/
  */
 if ( ! defined( 'WP_DEBUG' ) ) {
-	define( 'WP_DEBUG', false );
+	define('WP_DEBUG', true);
+define('WP_DEBUG_LOG', true);
+define('WP_DEBUG_DISPLAY', false);
+@ini_set('display_errors', 0);
+
+	
 }
 
 

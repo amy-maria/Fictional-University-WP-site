@@ -1,6 +1,5 @@
 <?php
-
-    
+   
 //Event Post type
 function university_post_types () {
 register_post_type('event', array(
@@ -19,7 +18,6 @@ register_post_type('event', array(
     'all_items' => 'All Events',
     'singular_name' => "Event"
 )
-
 ));
 
 //campuses post type
@@ -38,10 +36,7 @@ register_post_type('campus', array(
         'edit-item' => "Edit Campus",
         'all_items' => 'All Campuses',
         'singular_name' => "Campus"
-    
-    
     )
-    
     ));
 //Program post type
 
@@ -58,10 +53,7 @@ register_post_type('program', array(
         'edit-item' => "Edit Program",
         'all_items' => 'All Programs',
         'singular_name' => "Program"
-    
-    
     )
-    
     ));
 //Professor Post Type
     register_post_type('professor', 
@@ -70,7 +62,6 @@ register_post_type('program', array(
     true,
         'supports' => array('title', 'editor', 'thumbnail'),
         'public' => true,
-        
         'menu_icon' => 'dashicons-welcome-learn-more',
         'labels' => array (
             'name' => "Professors",
@@ -78,10 +69,7 @@ register_post_type('program', array(
             'edit-item' => "Edit Professor",
             'all_items' => 'All Professors',
             'singular_name' => "Professor"
-        
-        
         )
-        
         ));
 
     //my-notes post type
@@ -101,18 +89,12 @@ register_post_type('program', array(
             'edit-item' => "Edit Note",
             'all_items' => 'All Notes',
             'singular_name' => "Note"
-        
-        
         )
-        
         ));
-
-    add_action('init', 'university_post_types');
 
     //Like post type
     register_post_type('like', 
     array(
-      
         'supports' => array('title',),
         'public' => false,
         'show_ui' =>  true,
@@ -123,8 +105,6 @@ register_post_type('program', array(
             'edit-item' => "Edit Like",
             'all_items' => 'All Likes',
             'singular_name' => "Like"
-        
-        
         )
         ));
     }
