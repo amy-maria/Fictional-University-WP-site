@@ -7,13 +7,20 @@ require get_theme_file_path('/inc/search-route.php');
 //creates new field in JSON data
 function university_custom_rest() {
 register_rest_field('post', 'authorName', array(
+    'permission_callback' => '__return_true',
     'get_callback' => function () {
 return get_the_author();
+
+
+
     }
 ));
 register_rest_field('note', 'userNoteCount', array(
+    'permission_callback' => '__return_true',
     'get_callback' => function () {
+    
 return count_user_posts(get_current_user_id(), 'note');
+
     }
 ));
 }
@@ -37,11 +44,11 @@ if (!isset($args['photo'])) {
                 }
     ?>
     <div class="page-banner">
-      <div class="page-banner__bg-image" style="background-image: url(<?php echo esc_url($args['photo']);?>"></div>
+      <div class="page-banner__bg-image" style="background-image: url(<?php echo ($args['photo']);?>"></div>
       <div class="page-banner__content container container--narrow">
-        <h1 class="page-banner__title"><?php echo esc_html($args['title']); ?></h1>
+        <h1 class="page-banner__title"><?php echo ($args['title']); ?></h1>
         <div class="page-banner__intro">
-        <p><?php echo esc_html($args['subtitle']);?></p>
+        <p><?php echo ($args['subtitle']);?></p>
         </div>
       </div>  
     </div>
@@ -103,10 +110,10 @@ function university_adjust_queries($query) {
 }
 add_action('pre_get_posts', 'university_adjust_queries');
 
-function universityMapKey () {
-    echo API_KEY;
-}
-add_filter('acf/fields/google_map/api', 'universityMapKey');
+//function universityMapKey () {
+    //echo API_KEY;
+//}
+//add_filter('acf/fields/google_map/api', 'universityMapKey');
 //redirect Subscriber acct
 
 add_action('admin_init', 'redirectSubs');

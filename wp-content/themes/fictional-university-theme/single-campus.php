@@ -14,7 +14,7 @@
 
       <div class="generic-content"><?php the_content(); ?></div>
       
-      <div class="acf-map">
+      <div class="map">
     <?php $mapLocation = get_Field('map_location');
     ?>
 

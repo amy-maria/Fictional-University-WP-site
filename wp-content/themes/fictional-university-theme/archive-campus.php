@@ -9,7 +9,7 @@ pageBanner(array(
 
    <div class="container container--narrow page-section">
     
-    <div class="acf-map">
+    <div class="map">
     <?php
 
     while(have_posts()) {
