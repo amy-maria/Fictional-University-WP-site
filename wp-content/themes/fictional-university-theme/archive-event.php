@@ -1,5 +1,4 @@
 <?php
-
 get_header();
 pageBanner(array(
   'title' => 'All Events',

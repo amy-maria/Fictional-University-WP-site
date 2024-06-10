@@ -9,17 +9,17 @@
     <header class="site-header">
       <div class="container">
         <h1 class="school-logo-text float-left">
-          <a href="<?php echo esc_url(site_url()); ?>"><strong>Fictional</strong> University</a>
+          <a href="<?php echo esc_url(site_url());?>"><strong>Fictional</strong> University</a>
         </h1>
         <a href = "<?php echo esc_url(site_url('search'));?>" class="js-search-trigger site-header__search-trigger"><i class="fa fa-search" aria-hidden="true"></i></a>
         <div class="hidden push-right">
-        <i class="site-header__menu-trigger  fa fa-bars " aria-hidden="true"></i></div>
+        <i class="site-header__menu-trigger fa fa-bars" aria-hidden="true"></i></div>
         <div class="site-header__menu group">
           <nav class="main-navigation">
             
            <ul>
               <li <?php
-              if (is_page('about-us') or wp_get_post_parent_id(0) == 13) echo 'class="current-menu-item" ' ?>><a href="<?php echo esc_url(site_url('/about-us')); ?>">About Us</a></li>
+              if (is_page('about-us') or wp_get_post_parent_id(0) == 13) echo 'class="current-menu-item"' ?>><a href="<?php echo esc_url(site_url('/about-us')); ?>">About Us</a></li>
               <li <?php if(get_post_type()=='program') echo 'class="current-menu-item"' ?>><a href="<?php echo esc_url(get_post_type_archive_link('program'));?>">Programs</a></li>
               <li <?php if (get_post_type() == "event" OR is_page('past-events')) echo 'class="current-menu-item"' ;?>><a href="<?php echo esc_url(get_post_type_archive_link("event")); ?>">Events</a></li>
               <li <?php if (get_post_type() == 'campus') echo 'class= "current-menu-item"'; ?>> <a href="<?php echo esc_url(get_post_type_archive_link('campus')); ?>">Campuses</a></li>
@@ -27,6 +27,7 @@
               if (get_post_type()== 'post') echo 'class="current-menu-item" ' ?>> <a href="<?php echo esc_url(site_url('/blog'));?>">Blog</a></li>
             </ul> 
           </nav>
+          
           <div class="site-header__util">
             <?php 
             if(is_user_logged_in()) {?>
