@@ -14,7 +14,7 @@
               <nav class="nav-list">
                 <ul>
                 <li <?php
-              if (is_page('about-us') or wp_get_post_parent_id(0) == 13) echo 'class="current-menu-item"' ?>><a href="<?php echo esc_url(site_url('/about-us')); ?>">About Us</a></li>
+              if (is_page('about-us') or wp_get_post_parent_id(0) == 13) echo 'class="current-menu-item"' ?>><a href="<?php echo esc_url(site_url('/about-us/')); ?>">About Us</a></li>
                   <li <?php if(get_post_type()=='program') echo 'class="current-menu-item"' ?>><a href="<?php echo esc_url(get_post_type_archive_link('program'));?>">Programs</a></li>
                   <li <?php if (get_post_type() == "event" OR is_page('past-events')) echo 'class="current-menu-item"' ;?>><a href="<?php echo esc_url(get_post_type_archive_link("event")); ?>">Events</a></li>
                   <li <?php if (get_post_type() == 'campus') echo 'class= "current-menu-item"'; ?>> <a href="<?php echo esc_url(get_post_type_archive_link('campus')); ?>">Campuses</a></li>
@@ -27,9 +27,9 @@
               <nav class="nav-list">
                 <ul>
                 <li <?php
-              if (is_page('cookie-policy') or wp_get_post_parent_id(0) == 21) echo 'class="current-menu-item"' ?>><a href="<?php echo esc_url(site_url('privacy-policy/cookie-policy')); ?>">Cookies</a></li>
+              if (is_page('cookie-policy') or wp_get_post_parent_id(0) == 21) echo 'class="current-menu-item"' ?>><a href="<?php echo esc_url(site_url('privacy-policy/cookie-policy/')); ?>">Cookies</a></li>
                   <li <?php
-              if (is_page('privacy-policy') or wp_get_post_parent_id(0) == 3) echo 'class="current-menu-item"' ?>><a href="<?php echo esc_url(site_url('/privacy-policy')); ?>">Privacy</a></li>
+              if (is_page('privacy-policy') or wp_get_post_parent_id(0) == 3) echo 'class="current-menu-item"' ?>><a href="<?php echo esc_url(site_url('/privacy-policy/')); ?>">Privacy</a></li>
                   
                 </ul>
               </nav>

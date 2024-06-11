@@ -38,7 +38,7 @@ define( 'DB_CHARSET', 'utf8' );
 /** The database collate type. Don't change this if in doubt. */
 define( 'DB_COLLATE', '' );
 /** google maps */
-define( 'API_KEY', 'AIzaSyDcojYXMigyexKqbLgWicOtfUz6r1XUoBo' );
+define( 'API_KEY', '' );
 /**#@+
  * Authentication unique keys and salts.
  *

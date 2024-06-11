@@ -6,15 +6,14 @@ require get_theme_file_path('/inc/search-route.php');
 
 //creates new field in JSON data
 function university_custom_rest() {
-register_rest_field('post', 'authorName', array(
-    'permission_callback' => '__return_true',
-    'get_callback' => function () {
-return get_the_author();
+    register_rest_field('post', 'authorName', array(
+        'get_callback' => function () {
+            return get_the_author();
+        },
+        'permission_callback' => '__return_true',
+    ));
+    
 
-
-
-    }
-));
 register_rest_field('note', 'userNoteCount', array(
     'permission_callback' => '__return_true',
     'get_callback' => function () {
@@ -55,12 +54,12 @@ if (!isset($args['photo'])) {
     <?php 
 }
 function university_files() {
-    wp_enqueue_script('googleMap', "//maps.googleapis.com/maps/api/js?key=AIzaSyD_4d-xu3MjPc0fYq7TuDyu7SnQ-cby8P0&callback=initMap", NULL, '1.0', true);
+    
     wp_enqueue_script('main-university-js', get_theme_file_uri('/build/index.js'), array('jquery'), '1.0', true);
     wp_enqueue_style('university_main_style', get_theme_file_uri('/build/style-index.css'));
     wp_enqueue_style('university_extra_styles', get_theme_file_uri('/build/index.css'));
     wp_enqueue_style('font-awesome', '//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
-    wp_enqueue_style('custom-google-fonts', '////fonts.googleapis.com/css?family=Roboto+Condensed:300,300i,400,400i,700,700i|Roboto:100,300,400,400i,700,700i');
+    wp_enqueue_style('custom-google-fonts', 'https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900' );
 
     wp_localize_script('main-university-js', 'universityData' , array (
         'root_url' => get_site_url(),
